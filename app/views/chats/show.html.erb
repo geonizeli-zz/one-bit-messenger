@@ -24,10 +24,22 @@
     <div class="container">
       <%= form_with url: chat_messages_path(@user) do |f| %>
         <div class="columns is-mobile is-vcentered">
-          <div class="column is-four-fifths">
+          <div class="column is-three-fifths">
             <div class="fields">
               <%= f.text_area "message[content]", class: "textarea", rows: 1, style: "resize: none" %>
             </div>
+          </div>
+          <div class="column is-one-fifths">
+            <label class="file-label">
+              <%= f.file_field :file, class: "file-input" %>
+                <span class="button is-info is-rounded has-text-white-ter">
+                  <% unless :file.blank? %>
+                    <i class="fas fa-upload"></i>
+                  <% else %>
+                    <i class="fas fa-archive"></i>
+                  <% end %>
+                </span>
+            </label>
           </div>
           <div class="column is-one-fifth has-text-centered">
             <%= button_tag class: "button is-info is-rounded has-text-white-ter" do %>
