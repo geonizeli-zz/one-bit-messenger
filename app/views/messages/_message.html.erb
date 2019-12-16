@@ -14,10 +14,32 @@
       <div class="column is-full content">
         <%= message.content %>
       </div>
-
+      <% if message.file.present? %>
+        <div class="column is-full content">
+        <% if message.file.blob.content_type.include? "image/"%>
+          <%= image_tag rails_blob_url(message.file), class:"is-rounded mobile"%>
+        <% else %>
+          <div class="columns">
+            <div class="column">
+              <strong>Nome do arquivo:</strong>
+              <%= message.file.blob.filename %>
+            </div>
+            <div class="column">
+              <strong>Tamanho:</strong>
+              <%= message.file.blob.byte_size%> Bytes
+            </div>
+            <div class="column">
+              <strong>
+                <%= link_to "Download", message.file.blob %>
+              </strong>
+            </div>
+          </div>
+        <% end%>
+        </div>
+      <% end %>
       <div class="column is-full date">
         <%= message.created_at.strftime("%m/%d/%Y %H:%M") %>
       </div>
     </div>
   </div>
-</div>
+</div>  
