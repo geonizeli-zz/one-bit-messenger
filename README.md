@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Messenger feito na Semana Full-Stack Ruby on Rails da OneBitCode
 
-Things you may want to cover:
+* Ruby 2.6.5
 
-* Ruby version
+* Rails 6.0.2
 
-* System dependencies
+### O que você vai encontrar de diferente da proposta original
 
-* Configuration
+* Postgresql no lugar do Sqlite
 
-* Database creation
+* Envio de fotos e arquivos no chat
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Não inseri o PWA (temporariamente)
